@@ -1,11 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        drawUIControl(new Checkbox());
+        TexBox texBox = new TexBox();
+        texBox.enable();
     }
 
-    public static void drawUIControl(UIControl uiControl){
-        uiControl.draw();
-    }
-
-    //A possibilidade de um objeto assumir multiplas formas formas
+    //A herança nos possibilita o reuso de código sem a necessidade de declarar explicitamente
 }
