@@ -1,13 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        var account = new Account();
-        System.out.println(account.getBalance());
+
+        Editor editor = new Editor();
+        History history = new History();
 
 
-        account.deposit(10);
-        account.withdraw(5);
-        System.out.println(account.getBalance());
+        editor.setContent("a");
+        history.push(editor.createState());
+
+
+        editor.setContent("b");
+        history.push(editor.createState());
+
+
+        editor.setContent("c");
+        editor.restore(history.pop());
+        editor.restore(history.pop());
+
+        System.out.println(editor.getContent());
+
     }
 }
-    /**O encapsulamento restringe o acesso dos atributos de forma direta, isso proteja nosso objeto de modo que
-    limitamos as possibilidades de interações*/
