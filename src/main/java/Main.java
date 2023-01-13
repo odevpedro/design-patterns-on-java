@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        var account = new Account();
-        System.out.println(account.getBalance());
+    MailService mailService = new MailService();
+    mailService.senEmail();
 
 
-        account.deposit(10);
-        account.withdraw(5);
-        System.out.println(account.getBalance());
+    /*
+    * restringimos o acesso aos métodos do objeto comportamento no momento que os setemos como privados
+    * um serviço de email deve apenas enviar o email e nada além disso*/
     }
 }
