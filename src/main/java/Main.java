@@ -1,15 +1,17 @@
 
 public class Main {
     public static void main(String[] args) {
-    var canvas = new Canvas();
-        System.out.println(canvas.getCurrentTool());
-        canvas.setCurrentTool(new EraserTool());
-        canvas.mouseDown();
-        canvas.mouseUp();
 
+    var history = new BrowserHistory();
+    history.push("a");
+    history.push("b");
+    history.push("c");
+    for (var i = 0; i < history.getUrls().size(); i++){
+        var url = history.getUrls().get(i);
+        System.out.println(url);
+    }
 
-    //Open close principle - Uma classe deve ser aberta para extensão e fechada para modificação
-    //cada tipo de ferramenta diferente executa/implementa os métodos genéricos de Tool a sua maneira
-
+    //Mudar as particularidades internas de um objeto não deveria afetar os seus consumidors
+    //Mudanças de qualquer aspecto dessa classe só deve afetar ESSA classe e não outras que estejam usando a mes
     }
 }
