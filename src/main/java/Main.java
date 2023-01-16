@@ -8,7 +8,7 @@ public class Main {
     history.push("c");
 
     Iterator iterator = history.createIterator();
-    while (iterator.hasNext()){
+    while (iterator.hasNext()) {
         var url = iterator.current();
         System.out.println(url);
         iterator.next();
