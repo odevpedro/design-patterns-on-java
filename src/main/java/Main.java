@@ -1,20 +1,34 @@
 
 public class Main {
     public static void main(String[] args) {
+    var imageStorage = new ImageStorage(new JPGCompressor(), new BlackAndWhiteFilter());
+        imageStorage.store("helloWorld.png");
+    }
+     }
 
-    var history = new BrowserHistory();
-    history.push("a");
-    history.push("b");
-    history.push("c");
 
-    Iterator iterator = history.createIterator();
-    while (iterator.hasNext()) {
-        var url = iterator.current();
-        System.out.println(url);
-        iterator.next();
+
+    /*
+    * THE PROBLEM:
+    * public class ImageStorage {
+    private String compressor;
+    private String filter;
+    public ImageStorage(String compressor, String filter) {
+        this.compressor = compressor;
+        this.filter = filter;
     }
 
-    //Mudar as particularidades internas de um objeto não deveria afetar os seus consumidors
-    //Mudanças de qualquer aspecto dessa classe só deve afetar ESSA classe e não outras que estejam usando a mes
+    public void sotre(String fileName){
+        if (compressor ==
+   "jpeg")
+            System.out.println("compressing using jpeg");
+        else if (compressor == "png")
+            System.out.println("Ciompressing using png");
+
+        if (filter == "b&w")
+            System.out.println("applying b&w filter");
+        else if (filter == "applying High contrast filter");
+
     }
 }
+    * */
